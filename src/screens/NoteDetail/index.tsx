@@ -7,7 +7,7 @@ interface NoteDetailProps {}
 const NoteDetail: React.FC<NoteDetailProps> = () => {
   return (
     <>
-      <Stack space={10} align="center">
+      <Stack space={20} align="center">
         <Text>We are in the note detail component</Text>
         <Text>We are in the note detail component</Text>
         <Text>We are in the note detail component</Text>

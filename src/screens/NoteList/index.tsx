@@ -19,16 +19,8 @@ const NoteList: React.FC<NoteListProps> = ({navigation}) => {
     <View style={styles.container}>
       <FlatList
         data={[
-          {key: 'Devin'},
-          {key: 'Dan'},
-          {key: 'Dominic'},
-          {key: 'Jackson'},
-          {key: 'James'},
-          {key: 'Joel'},
-          {key: 'John'},
-          {key: 'Jillian'},
-          {key: 'Jimmy'},
-          {key: 'Julie'},
+          {key: 'Todays Note', id: '1'},
+          {key: 'Yesterdays Note', id: '2'},
         ]}
         renderItem={renderItem}
       />
