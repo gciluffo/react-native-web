@@ -1,17 +1,20 @@
 import {View, Text, StyleSheet, FlatList, Button} from 'react-native';
 import React from 'react';
-import {CompositeNavigationProp} from '@react-navigation/native';
+import {Pressable, Platform} from 'react-native';
 
 interface NoteListProps {
   navigation: any;
+  route: any;
 }
 
-const NoteList: React.FC<NoteListProps> = ({navigation}) => {
+const NoteList: React.FC<NoteListProps> = ({navigation, route}) => {
   const renderItem = ({item}: any) => {
     return (
-      <Button
-        title={item.key}
-        onPress={() => navigation.navigate('NoteDetail')}></Button>
+      <Pressable
+        style={styles.item}
+        onPress={() => navigation.navigate('NoteDetail', {id: item.id})}>
+        <Text>{item.key}</Text>
+      </Pressable>
     );
   };
 
@@ -24,6 +27,10 @@ const NoteList: React.FC<NoteListProps> = ({navigation}) => {
         ]}
         renderItem={renderItem}
       />
+      <Text style={{backgroundColor: 'red'}}>Platform is {Platform.OS}</Text>
+      <Text style={{backgroundColor: 'green'}}>
+        Extra query params {JSON.stringify(route.params)}
+      </Text>
     </View>
   );
 };
@@ -37,6 +44,7 @@ const styles = StyleSheet.create({
     padding: 10,
     fontSize: 18,
     height: 44,
+    backgroundColor: '#34a1eb',
   },
 });
 

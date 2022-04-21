@@ -44,6 +44,9 @@ module.exports = {
     publicPath: '/',
     filename: 'rnw.bundle.js',
   },
+  devServer: {
+    historyApiFallback: true,
+  },
   resolve: {
     // If you're working on a multi-platform React Native app, web-specific
     // module implementations should be written in files using the extension
