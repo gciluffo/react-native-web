@@ -22,7 +22,7 @@ const NoteList: React.FC<NoteListProps> = ({navigation, route}) => {
     <View style={styles.container}>
       <FlatList
         data={[
-          {key: 'Todays Note', id: '1'},
+          {key: 'NOPE', id: '1'},
           {key: 'Yesterdays Note', id: '2'},
         ]}
         renderItem={renderItem}

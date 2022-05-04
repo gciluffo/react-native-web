@@ -1,0 +1,15 @@
+import React, {FC, ReactElement} from 'react';
+import {render, RenderOptions} from '@testing-library/react';
+import {StacksProvider} from '@mobily/stacks';
+
+const AllTheProviders: FC = ({children}) => {
+  return <StacksProvider spacing={4}>{children}</StacksProvider>;
+};
+
+const customRender = (
+  ui: ReactElement,
+  options?: Omit<RenderOptions, 'wrapper'>,
+) => render(ui, {wrapper: AllTheProviders, ...options});
+
+export * from '@testing-library/react';
+export {customRender as render};

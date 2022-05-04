@@ -8,7 +8,9 @@
     "start": "react-native start",
     "build:web": "rm -rf dist/ && webpack --mode=production --config web/webpack.config.js",
     "start:web": "webpack-dev-server --mode=development --config web/webpack.config.js",
-    "test": "jest",
+    "test": "yarn test:native && yarn test:web",
+    "test:native": "PLATFORM=native jest --forceExit",
+    "test:web": "PLATFORM=web jest --config jest.web.config.js --forceExit",
     "lint": "eslint ."
   },
   "dependencies": {
@@ -33,6 +35,9 @@
     "@types/react": "^18.0.5",
     "@types/react-native": "^0.67.4",
     "@types/react-test-renderer": "^18.0.0",
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "12.1.2",
+    "@testing-library/react-native": "^9.1.0",
     "babel-jest": "^26.6.3",
     "babel-loader": "^8.2.5",
     "babel-plugin-react-native-web": "^0.17.7",

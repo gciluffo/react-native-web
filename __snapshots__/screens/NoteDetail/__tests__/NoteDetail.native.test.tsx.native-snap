@@ -1,0 +1,74 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "flexDirection": "column",
+      "width": "100%",
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flex": 0,
+        "flexBasis": "auto",
+      }
+    }
+  >
+    <Text>
+      We are in the note detail component
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flex": 0,
+        "flexBasis": "auto",
+        "marginTop": 80,
+      }
+    }
+  >
+    <Text>
+      We are in the note detail component
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flex": 0,
+        "flexBasis": "auto",
+        "marginTop": 80,
+      }
+    }
+  >
+    <Text>
+      We are in the note detail component
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flex": 0,
+        "flexBasis": "auto",
+        "marginTop": 80,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "backgroundColor": "orange",
+        }
+      }
+    >
+      This is a component for the native apps
+    </Text>
+  </View>
+</View>
+`;

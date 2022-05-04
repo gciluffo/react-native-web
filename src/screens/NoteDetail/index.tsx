@@ -1,4 +1,4 @@
-import {View, Text} from 'react-native';
+import {Text} from 'react-native';
 import React from 'react';
 import {Stack} from '@mobily/stacks';
 import TestComponent from '../../components/TestComponent/TestComponent';
