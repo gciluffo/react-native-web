@@ -1,7 +1,7 @@
 import {View, Text, StyleSheet, FlatList, Button} from 'react-native';
 import React from 'react';
 import {Pressable, Platform} from 'react-native';
-
+import Icon from 'react-native-vector-icons/FontAwesome';
 interface NoteListProps {
   navigation: any;
   route: any;
@@ -13,7 +13,7 @@ const NoteList: React.FC<NoteListProps> = ({navigation, route}) => {
       <Pressable
         style={styles.item}
         onPress={() => navigation.navigate('NoteDetail', {id: item.id})}>
-        <Text>{item.key}</Text>
+        <Text>{item.key} </Text>
       </Pressable>
     );
   };
@@ -31,6 +31,7 @@ const NoteList: React.FC<NoteListProps> = ({navigation, route}) => {
       <Text style={{backgroundColor: 'green'}}>
         Extra query params {JSON.stringify(route.params)}
       </Text>
+      <Icon name="rocket" size={30} color="#900" />
     </View>
   );
 };

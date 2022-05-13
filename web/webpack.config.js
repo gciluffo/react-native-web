@@ -3,17 +3,22 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const appDirectory = path.resolve(__dirname, '../');
 
-// const compileNodeModules = [
-//   'react-navigation',
-//   '@react-navigation',
-//   'react-native-uncompiled',
-//   'react-native-web',
-//   '@mobily/stacks',
-// ].map(moduleName => path.resolve(appDirectory, `node_modules/${moduleName}`));
+const compileNodeModules = [
+  'react-navigation',
+  '@react-navigation',
+  'react-native-uncompiled',
+  'react-native-web',
+  '@mobily/stacks',
+  'react-native-vector-icons',
+].map(moduleName => path.resolve(appDirectory, `node_modules/${moduleName}`));
 
 const babelLoaderConfiguration = {
   test: /\.m?[t|j]sx?$/,
-  exclude: [/node_modules/],
+  include: [
+    path.resolve(__dirname, 'index.web.js'),
+    path.resolve(appDirectory, 'src'),
+    ...compileNodeModules,
+  ],
   use: {
     loader: 'babel-loader',
     options: {
@@ -22,6 +27,7 @@ const babelLoaderConfiguration = {
     },
   },
 };
+
 const svgLoaderConfiguration = {
   test: /\.svg$/,
   loader: '@svgr/webpack',
@@ -29,6 +35,13 @@ const svgLoaderConfiguration = {
 const imageLoaderConfiguration = {
   test: /\.(gif|svg|jpg|png)$/,
   loader: 'file-loader',
+};
+const ttfLoaderConfig = {
+  test: /\.ttf$/,
+  loader: 'url-loader', // or directly file-loader
+  include: [
+    path.resolve(appDirectory, 'node_modules/react-native-vector-icons'),
+  ],
 };
 
 module.exports = {
@@ -59,9 +72,9 @@ module.exports = {
   module: {
     rules: [
       babelLoaderConfiguration,
-      //   tsLoaderConfiguration,
       imageLoaderConfiguration,
       svgLoaderConfiguration,
+      ttfLoaderConfig,
     ],
   },
   plugins: [
